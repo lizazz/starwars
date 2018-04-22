@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('getPersons', 'StarWarsController@getPersons');
+Route::resource('/getPersons', 'StarWarsController')->middleware('auth');
+Route::get('starwars/getPersons', 'StarWarsController@getPersons');
